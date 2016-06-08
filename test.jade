@@ -5,19 +5,19 @@ html(lang="en")
     title LightBox Demo
     link(type="text/css",rel="stylesheet",href="style.css")
   body
-    .container
+    .container.1-g
       .a
         h1 Rohan LightBox
       .x.opacity
       .images
         ul
           li
-            a(href="a1.jpg")
-              img(src="a1.jpg", alt="")
+            a(href="a2.jpg")
+              img(src="a2.jpg", alt="")
                 
           li
-            a(href="a1.jpg")
-              img(src="a1.jpg", alt="")
+            a(href="a3.jpg")
+              img(src="a3.jpg", alt="")
           li
             a(href="a1.jpg")
               img(src="a1.jpg", alt="")
@@ -41,4 +41,4 @@ html(lang="en")
               img(src="a1.jpg", alt="")  
     <script src="bower_components/jquery/dist/jquery.js"></script>
     script(src="lightbox.js")
-    script $(".images").lightbox();
+    script $("a").lightbox();

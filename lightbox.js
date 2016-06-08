@@ -9,7 +9,11 @@ $("head").append("<style> \
   left: 0; \
   bottom: 0; \
   height:" + h + "px; \
-  z-index: 2; }\
+  z-index: 2; } \
+  .hgg { \
+    position: absolute; \
+    height: 0px; \
+  } \
   .glow1 { \
     transition: height 0.8s ease-in-out; \
     position: absolute; \
@@ -23,18 +27,17 @@ $("head").append("<style> \
     $("body").prepend("<div class=1-c></div>");
     $(".1-c").click(function() {
       $(".1-c").toggleClass("cc1");
-      $(".1-g").remove();
+      $(".hgg").toggleClass("glow1");
     });
-    console.log(this);
-    var $a = this;
-    var i = 0;
-    $($a).click(function(event) {
+    $("body").append("<img src="+ "a1.jpg" + " class=hgg>");
+      $(this).click(function(event) {
       event.preventDefault();
+      let source = $(this).find("img").attr("src");
+      $(".hgg").attr("src",source);
       $(".1-c").toggleClass("cc1");
-      let source = $(this).find("img").eq(0).attr("src");
-      i++;
-      $("body").append("<img src="+ source + " class=1-g>");
-      $(".1-g").toggleClass("glow1");
+      $(".hgg").toggleClass("glow1");
+      let h1 = window.pageYOffset
+      $(".glow1").css({"top": "calc(50% + " + (h1) + "px)"});
       });
   };
 }(jQuery));
